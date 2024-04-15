@@ -14,7 +14,7 @@ public class GetPatient : GAction
 
         resource = GWorld.Instance.RemoveCubicle();
         if (resource != null)
-            inventory.AddItem(resrouce);
+            inventory.AddItem(resource);
         else
         {
             GWorld.Instance.AddPatient(target);
@@ -30,7 +30,7 @@ public class GetPatient : GAction
     {
         GWorld.Instance.GetWorld().ModifyState("Waiting", -1);
         if (target)
-            target.GetComponenet<GAgent>().Inventory.AddItem(resrouce);
+            target.GetComponent<GAgent>().Inventory.AddItem(resource);
         return true;
     }
 }
